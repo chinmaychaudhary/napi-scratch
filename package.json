@@ -4,22 +4,8 @@
   "packageManager": "yarn@4.2.1",
   "main": "index.js",
   "types": "index.d.ts",
-  "scripts": {
-    "artifacts": "napi artifacts",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
-    "prepublishOnly": "napi prepublish -t npm",
-    "test": "ava",
-    "try": "RUST_BACKTRACE=full node test.mjs",
-    "universal": "napi universal",
-    "version": "napi version"
-  },
-  "napi": {
-    "name": "sum",
-    "triples": {}
-  },
   "devDependencies": {
-    "@napi-rs/cli": "^2.18.3",
+    "@napi-rs/cli": "^2.18.4",
     "ava": "^6.0.1"
   },
   "ava": {
@@ -27,5 +13,9 @@
   },
   "engines": {
     "node": ">= 10"
+  },
+  "scripts": {
+    "build:debug": "napi build --platform",
+    "try": "yarn build:debug && RUST_BACKTRACE=1 node try.mjs"
   }
 }

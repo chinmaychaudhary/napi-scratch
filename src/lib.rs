@@ -4,7 +4,7 @@
 extern crate napi_derive;
 
 #[napi]
-pub fn sum(a: i32, b: i32) -> i32 {
-  assert!(a > b);
-  a + b
+pub fn subtract_with_assertion(a: i32, b: i32) -> i32 {
+  assert!(a>b);
+  a - b
 }
